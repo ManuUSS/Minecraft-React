@@ -13,7 +13,7 @@ export const Ground = () => {
     return (
         <mesh ref={ ref }>
 
-            <planeBufferGeometry 
+            <planeGeometry 
                 attach='geometry' 
                 args={[ 100, 100 ]} 
             />
