@@ -3,18 +3,20 @@ import { Sky     } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
 import { Ground } from './components/Ground';
 import { Pov } from './components/Pov';
+import { Player } from './components/Player';
 
 function App() {
   
   return (
     <Canvas>
       <Sky 
-        sunPosition={[ 100, 100, 200 ]}
+        sunPosition={[ 100, 100, 100 ]}
         distance={ 50 }
       />
       <ambientLight intensity={ 0.8 } />
       <Pov />
       <Physics>
+        <Player />
         <Ground />
       </Physics>
     </Canvas>
