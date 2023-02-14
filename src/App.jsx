@@ -5,7 +5,11 @@ function App() {
   
   return (
     <Canvas>
-      <Sky></Sky>
+      <Sky 
+        sunPosition={[ 100, 100, 200 ]}
+        distance={ 50 }
+      />
+      <ambientLight intensity={ 0.5 } />
     </Canvas>
   )
 }
