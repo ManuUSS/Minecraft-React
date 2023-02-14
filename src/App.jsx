@@ -12,7 +12,7 @@ function App() {
         sunPosition={[ 100, 100, 200 ]}
         distance={ 50 }
       />
-      <ambientLight intensity={ 0.5 } />
+      <ambientLight intensity={ 0.8 } />
       <Pov />
       <Physics>
         <Ground />
