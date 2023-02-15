@@ -63,7 +63,7 @@ export const Player = () => {
             direction.z
         );
 
-        if(  jump ) {
+        if(  jump && Math.abs( vel.current[ 1 ] ) < 0.05 ) {
             api.velocity.set(
                 vel.current[0],
                 CHARACTER_JUMP,
