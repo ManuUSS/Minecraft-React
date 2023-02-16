@@ -6,6 +6,6 @@ export const Pov = () => {
     const { camera, gl } = useThree();
 
     return (
-        <PointerLockControls camera={ camera } args={[ gl.domElement ]} />
+        <PointerLockControls  args={[ camera, gl.domElement ]} />
     )
 }

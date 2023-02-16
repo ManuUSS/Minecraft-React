@@ -8,10 +8,19 @@ export const useStore = create( set => ({
         {
             id      : nanoid(),
             position: [ 1, 1, 1 ],
-            texture : 'stone' 
+            texture : 'glass' 
         }
     ],
-    addCube     : () => {},
+    addCube     : ( x, y, z ) => {
+        set( state => ({
+            cubes: [ ...state.cubes, {
+                id: nanoid(),
+                position: [ x, y, z ],
+                texture: state.texture
+            }],
+        }));
+        
+    },
     removeCube  : () => {},
     setTexture  : () => {},
     saveWorld   : () => {},
