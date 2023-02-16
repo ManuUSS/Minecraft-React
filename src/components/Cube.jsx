@@ -1,5 +1,6 @@
 import { useBox } from '@react-three/cannon';
 import { useState } from 'react';
+import { useStore } from '../hooks/useStore';
 import * as textures from '../images/textures';
 
 export const Cube = ({ position, texture }) => {
@@ -9,14 +10,35 @@ export const Cube = ({ position, texture }) => {
         type: 'Static',
         position
     }))
-    
+    const [ removeCube ] = useStore( state => [ state.removeCube ] )
+
     const activeTexture = textures[ texture + 'Texture' ];
+    
+    
+    const onHoverCube = ( event ) => {
+        event.stopPropagation(); 
+        setIsHovered( true );
+    }
+    
+    const onHoverOutCube = ( event ) => {
+        event.stopPropagation(); 
+        setIsHovered( false );
+    }
+
+    const onRemoveCube = ( event ) => {
+        if( event.altKey ) {
+            const { x, y, z } = ref.current.position;
+            removeCube( x, y, z );
+        }
+    }
+
 
     return (
         <mesh 
             ref={ ref }
-            onPointerMove={ ( e ) => { e.stopPropagation(); setIsHovered( true ) }}
-            onPointerOut={ ( e ) => { e.stopPropagation(); setIsHovered( false ) }}
+            onPointerMove={ onHoverCube }
+            onPointerOut={ onHoverOutCube }
+            onClick={ onRemoveCube }
         >
             <boxGeometry attach='geometry' />
             <meshStandardMaterial 
