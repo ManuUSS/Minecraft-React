@@ -21,12 +21,9 @@ export const useStore = create( set => ({
         }));
         
     },
-    removeCube  : ( x, y, z ) => {
+    removeCube  : ( id ) => {
         set( state => ({
-            cubes: state.cubes.filter( cube => {
-                const [ xCube, yCube, zCube ] = cube.position;
-                return x !== xCube || y !== yCube || z !== zCube
-            })
+            cubes: state.cubes.filter( cube => cube.id !== id )
         }) )
     },
     setTexture  : () => {},

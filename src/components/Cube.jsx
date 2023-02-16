@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useStore } from '../hooks/useStore';
 import * as textures from '../images/textures';
 
-export const Cube = ({ position, texture }) => {
+export const Cube = ({ id, position, texture }) => {
     
     const [ isHovered, setIsHovered] = useState( false );
     const [ ref ] = useBox( () => ({
@@ -26,9 +26,9 @@ export const Cube = ({ position, texture }) => {
     }
 
     const onRemoveCube = ( event ) => {
+        event.stopPropagation(); 
         if( event.altKey ) {
-            const { x, y, z } = ref.current.position;
-            removeCube( x, y, z );
+            removeCube( id );
         }
     }
 
