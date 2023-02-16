@@ -25,7 +25,7 @@ export const useStore = create( set => ({
         set( state => ({
             cubes: state.cubes.filter( cube => {
                 const [ xCube, yCube, zCube ] = cube.position;
-                return x == xCube || y == yCube || z == zCube
+                return x !== xCube || y !== yCube || z !== zCube
             })
         }) )
     },

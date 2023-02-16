@@ -15,6 +15,7 @@ export const Ground = () => {
 
     const onClickGround = ( event ) => {
         event.stopPropagation();
+        if( event.altKey ) return;
         const [ x, y, z ] = Object.values( event.point ).map( p => Math.ceil( p ) );
         addCube( x, y, z );
     }
