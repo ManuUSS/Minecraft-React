@@ -1,7 +1,7 @@
 import { NearestFilter, RepeatWrapping, TextureLoader } from 'three';
-import { groundImg, grassImg, logImg, stoneImg, glassImg } from '.';
+import { greenImg, grassImg, logImg, stoneImg, glassImg } from '.';
 
-const groundTexture = new TextureLoader().load( groundImg );
+const groundTexture = new TextureLoader().load( greenImg );
 groundTexture.wrapS = RepeatWrapping;
 groundTexture.wrapT = RepeatWrapping;
 groundTexture.magFilter = NearestFilter;

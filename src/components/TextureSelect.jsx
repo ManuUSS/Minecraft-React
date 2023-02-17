@@ -9,19 +9,19 @@ export const TextureSelect = () => {
     const [ texture, setTexture ] = useStore( state => [ state.texture, state.setTexture ]);
     
     const {
-        glass,
-        grass,
         green,
+        grass,
+        glass,
         log,
         stone
     } = useKeyboard();
 
     useEffect(() => {
         const options = {
-            grass,
-            glass, 
             green,
-            log, 
+            grass,
+            glass,
+            log,
             stone
         }
 
@@ -32,19 +32,20 @@ export const TextureSelect = () => {
             setTexture( textureName );
         }
     
-    }, [ glass, grass,  green,  log,  stone ])
+    }, [ green, grass, glass, log,  stone ])
     
     if( !visible ) return null;
 
     return (
         <div className='texture-selector'>
             {
-                Object.entries( images ).map(([ textureName, texture ]) => {
+                Object.entries( images ).map(([ imgtextureName, imgTexture ]) => {
                     return (
                         <img
-                            key={ textureName }
-                            src={ texture }
-                            alt={ textureName }
+                            className={ texture === imgtextureName.replace('Img', '') ? 'selected' : ''}
+                            key={ imgtextureName }
+                            src={ imgTexture }
+                            alt={ `${imgtextureName}, ${ texture }` }
                         />
                     )
                 })
