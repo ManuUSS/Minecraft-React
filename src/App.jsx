@@ -5,6 +5,7 @@ import { Ground } from './components/Ground';
 import { Pov } from './components/Pov';
 import { Player } from './components/Player';
 import { Cubes } from './components/Cubes';
+import { TextureSelect } from './components/TextureSelect';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         />
         <ambientLight intensity={ 0.8 } />
         <Pov />
+        <TextureSelect />
         <Physics>
           <Cubes />
           <Player />
