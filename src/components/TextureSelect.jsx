@@ -17,6 +17,16 @@ export const TextureSelect = () => {
     } = useKeyboard();
 
     useEffect(() => {
+        const visibilityTimeout = setTimeout(() => {
+            setVisible( false );
+        }, 1200);
+        setVisible( true );
+        return () => {
+            clearTimeout( visibilityTimeout );
+        }
+    }, [ texture ])
+
+    useEffect(() => {
         const options = {
             green,
             grass,
