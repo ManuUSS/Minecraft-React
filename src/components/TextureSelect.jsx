@@ -32,11 +32,7 @@ export const TextureSelect = () => {
             setTexture( textureName );
         }
     
-        
-
     }, [ glass, grass,  green,  log,  stone ])
     
-  return (
-    <div>TextureSelect</div>
-  )
+  return null
 }
