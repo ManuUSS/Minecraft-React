@@ -5,7 +5,7 @@ import * as images from '../images/index';
 
 
 export const TextureSelect = () => {
-    const [ visible, setVisible ] = useState( false );
+    const [ visible, setVisible ] = useState( true );
     const [ texture, setTexture ] = useStore( state => [ state.texture, state.setTexture ]);
     
     const {
