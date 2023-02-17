@@ -6,9 +6,9 @@ const ACTIONS_KEYBOARD = {
     'KeyA'  : 'moveLeft',
     'KeyD'  : 'moveRight',
     'Space' : 'jump',
-    'Digit1': 'green',
+    'Digit1': 'glass',
     'Digit2': 'grass',
-    'Digit3': 'glass',
+    'Digit3': 'green',
     'Digit4': 'log',
     'Digit5': 'stone',
 }
