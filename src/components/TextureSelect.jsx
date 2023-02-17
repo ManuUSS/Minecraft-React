@@ -37,7 +37,7 @@ export const TextureSelect = () => {
     if( !visible ) return null;
 
     return (
-        <div>
+        <div className='texture-selector'>
             {
                 Object.entries( images ).map(([ textureName, texture ]) => {
                     return (

@@ -18,13 +18,13 @@ function App() {
         />
         <ambientLight intensity={ 0.8 } />
         <Pov />
-        <TextureSelect />
         <Physics>
           <Cubes />
           <Player />
           <Ground />
         </Physics>
       </Canvas>
+      <TextureSelect />
       <div className='pointer'>+</div>
     </>
   )
