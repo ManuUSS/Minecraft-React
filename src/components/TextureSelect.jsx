@@ -34,5 +34,21 @@ export const TextureSelect = () => {
     
     }, [ glass, grass,  green,  log,  stone ])
     
-  return null
+    if( !visible ) return null;
+
+    return (
+        <div>
+            {
+                Object.entries( images ).map(([ textureName, texture ]) => {
+                    return (
+                        <img
+                            key={ textureName }
+                            src={ texture }
+                            alt={ textureName }
+                        />
+                    )
+                })
+            }
+        </div>
+    )
 }
